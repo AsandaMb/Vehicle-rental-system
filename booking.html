@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Ride - DriveNow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"/>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: url('sunset-beach-drive-stockcake.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-orange-500 text-white py-6">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-semibold">DriveNow</h1>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html#home" class="hover:text-orange-200 transition duration-300">Home</a></li>
+                    <li><a href="index.html#vehicles" class="hover:text-orange-200 transition duration-300">Vehicles</a></li>
+                    <li><a href="booking.html" class="hover:text-orange-200 transition duration-300">Book Now</a></li>
+                    <li><a href="index.html#contact" class="hover:text-orange-200 transition duration-300">Contact</a></li>
+                    <li id="nav-login-register" class="hidden"><a href="index.html#login" class="hover:text-orange-200 transition duration-300">Login / Register</a></li>
+                    <li id="nav-logout"><a href="#" class="hover:text-orange-200 transition duration-300">Logout</a></li>
+                </ul>
+            </nav>
+            <button id="hamburger-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
+        <div class="bg-gray-800 w-80 h-full absolute right-0 p-6">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-btn" class="text-white focus:outline-none" aria-label="Close Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="block">
+                <ul class="space-y-4">
+                    <li><a href="index.html#home" class="block text-lg text-white hover:text-orange-200 transition duration-300">Home</a></li>
+                    <li><a href="index.html#vehicles" class="block text-lg text-white hover:text-orange-200 transition duration-300">Vehicles</a></li>
+                    <li><a href="booking.html" class="block text-lg text-white hover:text-orange-200 transition duration-300">Book Now</a></li>
+                    <li><a href="index.html#contact" class="block text-lg text-white hover:text-orange-200 transition duration-300">Contact</a></li>
+                    <li id="mobile-nav-login-register" class="hidden"><a href="index.html#login" class="block text-lg text-white hover:text-orange-200 transition duration-300">Login / Register</a></li>
+                    <li id="mobile-nav-logout"><a href="#" class="block text-lg text-white hover:text-orange-200 transition duration-300">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="book-now-form" class="bg-white rounded-lg shadow-md p-6 mb-6 w-full md:w-lg">
+            <h2 class="text-xl font-semibold mb-4 text-center">Book Your Ride Now!</h2>
+            <form id="booking-form" class="space-y-4">
+                <div>
+                    <label for="pickup-location" class="block text-gray-700 text-sm font-bold mb-2">Pickup Location:</label>
+                    <input type="text" id="pickup-location" name="pickup-location" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required placeholder="Enter city or address">
+                </div>
+                <div>
+                    <label for="dropoff-location" class="block text-gray-700 text-sm font-bold mb-2">Drop-off Location:</label>
+                    <input type="text" id="dropoff-location" name="dropoff-location" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter city or address (optional)">
+                </div>
+                <div>
+                    <label for="pickup-date" class="block text-gray-700 text-sm font-bold mb-2">Pickup Date:</label>
+                    <input type="date" id="pickup-date" name="pickup-date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+                <div>
+                    <label for="pickup-time" class="block text-gray-700 text-sm font-bold mb-2">Pickup Time:</label>
+                    <input type="time" id="pickup-time" name="pickup-time" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+                <div>
+                    <label for="dropoff-date" class="block text-gray-700 text-sm font-bold mb-2">Drop-off Date:</label>
+                    <input type="date" id="dropoff-date" name="dropoff-date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div>
+                    <label for="dropoff-time" class="block text-gray-700 text-sm font-bold mb-2">Drop-off Time:</label>
+                    <input type="time" id="dropoff-time" name="dropoff-time" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div>
+                    <label for="vehicle-type" class="block text-gray-700 text-sm font-bold mb-2">Vehicle Type:</label>
+                    <select id="vehicle-type" name="vehicle-type" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="">-- Select Vehicle Type --</option>
+                        <option value="economy">Economy</option>
+                        <option value="compact">Compact</option>
+                        <option value="suv">SUV</option>
+                        <option value="luxury">Luxury</option>
+                        <option value="van">Van</option>
+                    </select>
+                </div>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">Search Vehicles</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; <span id="current-year">2025</span> DriveNow. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearSpan = document.getElementById('current-year');
+            const currentYear = new Date().getFullYear();
+            yearSpan.textContent = currentYear;
+        });
+
+        const bookingForm = document.getElementById('booking-form');
+
+        bookingForm.addEventListener('submit', (event) => {
+            event.preventDefault(); 
+            const pickupLocation = document.getElementById('pickup-location').value;
+            const dropoffLocation = document.getElementById('dropoff-location').value;
+            const pickupDate = document.getElementById('pickup-date').value;
+            const pickupTime = document.getElementById('pickup-time').value;
+            const dropoffDate = document.getElementById('dropoff-date').value;
+            const dropoffTime = document.getElementById('dropoff-time').value;
+            const vehicleType = document.getElementById('vehicle-type').value;
+
+            console.log('Booking Details:', {
+                pickupLocation,
+                dropoffLocation,
+                pickupDate,
+                pickupTime,
+                dropoffDate,
+                dropoffTime,
+                vehicleType
+            });
+
+           
+            alert('Booking details submitted! (This is a front-end simulation on booking.html)');
+            
+        });
+
+       
+        const navLinks = document.querySelectorAll('header nav ul li a');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === '#home') {
+                link.setAttribute('href', 'index.html#home');
+            } else if (link.getAttribute('href') === '#vehicles') {
+                link.setAttribute('href', 'index.html#vehicles');
+            } else if (link.getAttribute('href') === '#contact') {
+                link.setAttribute('href', 'index.html#contact');
+            } else if (link.getAttribute('href') === '#login') {
+                const loginRegisterLi = document.getElementById('nav-login-register');
+                if (loginRegisterLi) {
+                    link.setAttribute('href', 'index.html#login');
+                    loginRegisterLi.classList.remove('hidden');
+                }
+            }
+        });
+
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu nav ul li a');
+        mobileNavLinks.forEach(link => {
+            if (link.getAttribute('href') === '#home') {
+                link.setAttribute('href', 'index.html#home');
+            } else if (link.getAttribute('href') === '#vehicles') {
+                link.setAttribute('href', 'index.html#vehicles');
+            } else if (link.getAttribute('href') === '#contact') {
+                link.setAttribute('href', 'index.html#contact');
+            } else if (link.getAttribute('href') === '#login') {
+                const mobileLoginRegisterLi = document.getElementById('mobile-nav-login-register');
+                if (mobileLoginRegisterLi) {
+                    link.setAttribute('href', 'index.html#login');
+                    mobileLoginRegisterLi.classList.remove('hidden'); 
+                }
+            }
+        });
+
+        
+        const navLogoutLink = document.getElementById('nav-logout');
+        if (navLogoutLink) {
+            navLogoutLink.addEventListener('click', () => {
+                localStorage.removeItem('username');
+                window.location.href = 'index.html'; 
+            });
+        }
+        const mobileNavLogoutLink = document.getElementById('mobile-nav-logout');
+        if (mobileNavLogoutLink) {
+            mobileNavLogoutLink.addEventListener('click', () => {
+                localStorage.removeItem('username');
+                window.location.href = 'index.html'; 
+            });
+        }
+
+       
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+
+        function showMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+        }
+
+        function hideMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        hamburgerBtn.addEventListener('click', showMobileMenu);
+        closeMenuBtn.addEventListener('click', hideMobileMenu);
+
+        
+        function checkLoginStatus() {
+            const username = localStorage.getItem('username');
+            const navLoginRegisterLink = document.getElementById('nav-login-register');
+            const navLogoutLink = document.getElementById('nav-logout');
+            const mobileNavLoginRegisterLink = document.getElementById('mobile-nav-login-register');
+            const mobileNavLogoutLink = document.getElementById('mobile-nav-logout');
+
+            if (username) {
+                if (navLoginRegisterLink) navLoginRegisterLink.classList.add('hidden');
+                if (navLogoutLink) navLogoutLink.classList.remove('hidden');
+                if (mobileNavLoginRegisterLink) mobileNavLoginRegisterLink.classList.add('hidden');
+                if (mobileNavLogoutLink) mobileNavLogoutLink.classList.remove('hidden');
+            } else {
+                if (navLoginRegisterLink) navLoginRegisterLink.classList.remove('hidden');
+                if (navLogoutLink) navLogoutLink.classList.add('hidden');
+                if (mobileNavLoginRegisterLink) mobileNavLoginRegisterLink.classList.remove('hidden');
+                if (mobileNavLogoutLink) mobileNavLogoutLink.classList.add('hidden');
+            }
+        }
+
+        checkLoginStatus(); 
+    </script>
+</body>
+</html>
