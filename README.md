@@ -36,3 +36,27 @@ Siya
 Frontend(palesalephoi and Asanda)
 html file containing first webpage 
 user can login using username and password 
+
+
+frontend/
+├── public/
+│   ├── index.html
+│   ├── sunset-beach-drive-stockcake.jpg
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── MobileMenu.jsx
+│   │   ├── LoginForm.jsx
+│   │   ├── RegisterForm.jsx
+│   │   ├── HomePage.jsx
+│   │   └── Footer.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   └── Booking.jsx
+│   ├── App.js
+│   ├── index.js
+│   ├── App.css
+│   └── index.css
+├── package.json
+└── README.md
