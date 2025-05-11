@@ -9,248 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"/>
     <style>
         body {
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Rental Platform</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"/>
-    <style>
-        body {
             font-family: 'Inter', sans-serif;
-        }
-    </style>
-</head>
-<body style="background-image: url('sunset-beach-drive-stockcake.jpg'); background-size: cover; background-repeat: no-repeat;">
-    <header class="bg-orange-500 text-white py-6">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-2xl font-semibold">DriveNow</h1>
-            <nav class="hidden md:block">
-                <ul class="flex space-x-6">
-                    <li><a href="#home" class="hover:text-orange-200 transition duration-300">Home</a></li>
-                    <li><a href="#vehicles" class="hover:text-orange-200 transition duration-300">Vehicles</a></li>
-                    <li><a href="#book" class="hover:text-orange-200 transition duration-300">Book Now</a></li>
-                    <li><a href="#contact" class="hover:text-orange-200 transition duration-300">Contact</a></li>
-                    <li id="nav-login-register"><a href="#login" class="hover:text-orange-200 transition duration-300">Login / Register</a></li>
-                    <li id="nav-logout" class="hidden"><a href="#" class="hover:text-orange-200 transition duration-300">Logout</a></li>
-                </ul>
-            </nav>
-            <button id="hamburger-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-            </button>
-        </div>
-    </header>
-
-    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
-        <div class="bg-gray-800 w-80 h-full absolute right-0 p-6">
-            <div class="flex justify-end mb-4">
-                <button id="close-menu-btn" class="text-white focus:outline-none" aria-label="Close Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <nav class="block">
-                <ul class="space-y-4">
-                    <li><a href="#home" class="block text-lg text-white hover:text-orange-200 transition duration-300">Home</a></li>
-                    <li><a href="#vehicles" class="block text-lg text-white hover:text-orange-200 transition duration-300">Vehicles</a></li>
-                    <li><a href="#book" class="block text-lg text-white hover:text-orange-200 transition duration-300">Book Now</a></li>
-                    <li><a href="#contact" class="block text-lg text-white hover:text-orange-200 transition duration-300">Contact</a></li>
-                    <li id="mobile-nav-login-register"><a href="#login" class="block text-lg text-white hover:text-orange-200 transition duration-300">Login / Register</a></li>
-                    <li id="mobile-nav-logout" class="hidden"><a href="#" class="block text-lg text-white hover:text-orange-200 transition duration-300">Logout</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-
-     <main class="container mx-auto px-4 py-8 flex flex-col items-center justify-center min-h-[calc(100vh - /* height of header + footer */ 144px)]">
-        <section id="login-register" class="rounded-lg shadow-md p-6 mb-6  w-full sm:w-96 " style="background-color: #555050ad;">
-
-            <h2 class="text-xl font-semibold mb-4 text-center">Login</h2>
-            <form id="login-form" class="space-y-4">
-                <div>
-                    <label for="username" class="block text-black-700 text-sm font-bold mb-2">Username:</label>
-                    <input type="text" id="username" name="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                </div>
-                <div>
-                    <label for="password" class="block text-black-700 text-sm font-bold mb-2">Password:</label>
-                    <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                </div>
-                <button type="submit" class="bg-gray-800 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">Login</button>
-            </form>
-            <div id="register-link" class="text-center mt-4">
-                <p>Don't have an account? <a href="#" class="text-blue-500 hover:underline font-semibold">Register</a></p>
-            </div>
-        </section>
-
-        <section id="registration-form" class="bg-gray-200 rounded-lg shadow-md p-6 mb-6 hidden w-full sm:w-96" style="background-color: #555050ad;">
-            <h2 class="text-xl font-semibold mb-4 text-center">Register</h2>
-            <form id="register-form" class="space-y-4">
-                <div>
-                    <label for="reg-username" class="block text-black-700 text-sm font-bold mb-2">Username:</label>
-                    <input type="text" id="reg-username" name="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                </div>
-                <div>
-                    <label for="reg-password" class="block text-black-700 text-sm font-bold mb-2">Password:</label>
-                    <input type="password" id="reg-password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                </div>
-                <div>
-                    <label for="reg-email" class="block text-black-700 text-sm font-bold mb-2">Email:</label>
-                    <input type="email" id="reg-email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                </div>
-                <button type="submit" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">Register</button>
-            </form>
-            <div id="login-link" class="text-center mt-4">
-                <p>Already have an account? <a href="#" class="text-blue-700 hover:underline font-semibold">Login</a></p>
-            </div>
-        </section>
-
-        <section id="homepage" class="rounded-lg shadow-md p-6 mb-6  w-full sm:w-96 " style="background-color: #555050ad;">
-            <h2 class="text-xl font-semibold mb-4">Welcome to DriveNow!</h2>
-            <p class="mb-4">Your one-stop platform for renting your dream vehicle.</p>
-            <ul class="list-disc list-inside space-y-2">
-                <li>Browse our wide selection of vehicles.</li>
-                <li>Easily book your rental online.</li>
-                <li>Manage your bookings and account.</li>
-                <li>Enjoy a seamless rental experience.</li>
-            </ul>
-            <a href="booking.html" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 inline-block">Book Now</a>
-            <button id="logout-button" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-6">Logout</button>
-        </section>
-    </main>
-
-    <footer class="bg-gray-800 text-white py-4 mt-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 DriveNow. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        const loginForm = document.getElementById('login-form');
-        const registerForm = document.getElementById('register-form');
-        const loginRegisterDiv = document.getElementById('login-register');
-        const registrationFormDiv = document.getElementById('registration-form');
-        const homepageDiv = document.getElementById('homepage');
-        const registerLink = document.getElementById('register-link');
-        const loginLink = document.getElementById('login-link');
-        const logoutButton = document.getElementById('logout-button');
-        const navLoginRegister = document.getElementById('nav-login-register');
-        const navLogout = document.getElementById('nav-logout');
-        const mobileNavLoginRegister = document.getElementById('mobile-nav-login-register');
-        const mobileNavLogout = document.getElementById('mobile-nav-logout');
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMenuBtn = document.getElementById('close-menu-btn');
-        const bookNowLink = document.querySelector('a[href="#book"]'); // Select the "Book Now" link in the nav
-        const mobileBookNowLink = document.querySelector('#mobile-menu a[href="#book"]');
-
-        function showMobileMenu() {
-            mobileMenu.classList.remove('hidden');
-        }
-
-        function hideMobileMenu() {
-            mobileMenu.classList.add('hidden');
-        }
-
-        hamburgerBtn.addEventListener('click', showMobileMenu);
-        closeMenuBtn.addEventListener('click', hideMobileMenu);
-
-        registerLink.addEventListener('click', (event) => {
-            event.preventDefault();
-            loginRegisterDiv.classList.add('hidden');
-            registrationFormDiv.classList.remove('hidden');
-        });
-
-        loginLink.addEventListener('click', (event) => {
-            event.preventDefault();
-            registrationFormDiv.classList.add('hidden');
-            loginRegisterDiv.classList.remove('hidden');
-        });
-
-        // Function to simulate successful login/registration
-        function simulateSuccess(username) {
-            // For demonstration, we'll just show the homepage
-            loginRegisterDiv.classList.add('hidden');
-            registrationFormDiv.classList.add('hidden');
-            homepageDiv.classList.remove('hidden');
-            navLoginRegister.classList.add('hidden');
-            navLogout.classList.remove('hidden');
-            mobileNavLoginRegister.classList.add('hidden');
-            mobileNavLogout.classList.remove('hidden');
-
-            // Store the username (in real app, use a secure token)
-            localStorage.setItem('username', username);
-        }
-
-        // Event listener for the login form submission
-        loginForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const username = event.target.username.value;
-            const password = event.target.password.value;
-
-            // In a real application, you would validate the username and password
-            // against a database or an API.  Here, we just simulate success.
-            if (username && password) {
-                simulateSuccess(username);
-            } else {
-                alert('Please enter both username and password.'); // Basic error handling
-            }
-        });
-
-        // Event listener for the registration form submission
-        registerForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const username = event.target.username.value;
-            const password = event.target.password.value;
-            const email = event.target.email.value;
-
-            // In a real application, you would validate the username, password, and email
-            // and store them in a database.  Here, we just simulate success.
-            if (username && password && email) {
-                simulateSuccess(username);
-            } else {
-                alert('Please enter username, password, and email.'); // Basic error handling
-            }
-        });
-
-        // Event listener for the logout button
-        logoutButton.addEventListener('click', () => {
-            // Clear the stored username (and in real app, clear token)
-            localStorage.removeItem('username');
-            homepageDiv.classList.add('hidden');
-            loginRegisterDiv.classList.remove('hidden'); // Go back to login page
-            navLoginRegister.classList.remove('hidden');
-            navLogout.classList.add('hidden');
-            mobileNavLoginRegister.classList.remove('hidden');
-            mobileNavLogout.classList.add('hidden');
-        });
-
-        // Check if the user is already logged in
-        if (localStorage.getItem('username')) {
-            simulateSuccess(localStorage.getItem('username'));
-        }
-
-        // Redirect to booking page
-        bookNowLink.addEventListener('click', (event) => {
-            event.preventDefault();
-            window.location.href = 'booking.html'; // Replace with your actual booking page URL
-        });
-
-        mobileBookNowLink.addEventListener('click', (event) => {
-            event.preventDefault();
-            window.location.href = 'booking.html'; // Replace with your actual booking page URL
-        });
-    </script>
-</body>
-</html>        font-family: 'Inter', sans-serif;
-            background-image: url('sunset-beach-drive-stockcake.jpg'); 
+            background-image: url('sunset-beach-drive-stockcake.jpg');
             background-size: cover;
             background-repeat: no-repeat;
+        }
+        .form-box {
+            background-color: #555050ad; /* Your specified background color */
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -265,7 +33,7 @@
                     <li><a href="booking.html" class="hover:text-orange-200 transition duration-300">Book Now</a></li>
                     <li><a href="index.html#contact" class="hover:text-orange-200 transition duration-300">Contact</a></li>
                     <li id="nav-login-register" class="hidden"><a href="index.html#login" class="hover:text-orange-200 transition duration-300">Login / Register</a></li>
-                    <li id="nav-logout"><a href="#" class="hover:text-orange-200 transition duration-300">Logout</a></li>
+                    <li id="nav-logout"><a href="#" onclick="logout()" class="hover:text-orange-200 transition duration-300">Logout</a></li>
                 </ul>
             </nav>
             <button id="hamburger-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
@@ -292,52 +60,53 @@
                     <li><a href="booking.html" class="block text-lg text-white hover:text-orange-200 transition duration-300">Book Now</a></li>
                     <li><a href="index.html#contact" class="block text-lg text-white hover:text-orange-200 transition duration-300">Contact</a></li>
                     <li id="mobile-nav-login-register" class="hidden"><a href="index.html#login" class="block text-lg text-white hover:text-orange-200 transition duration-300">Login / Register</a></li>
-                    <li id="mobile-nav-logout"><a href="#" class="block text-lg text-white hover:text-orange-200 transition duration-300">Logout</a></li>
+                    <li id="mobile-nav-logout"><a href="#" onclick="logout()" class="block text-lg text-white hover:text-orange-200 transition duration-300">Logout</a></li>
                 </ul>
             </nav>
         </div>
     </div>
 
     <main class="container mx-auto px-4 py-8">
-        <section id="book-now-form" class="bg-white rounded-lg shadow-md p-6 mb-6 w-full md:w-lg">
-            <h2 class="text-xl font-semibold mb-4 text-center">Book Your Ride Now!</h2>
-            <form id="booking-form" class="space-y-4">
-                <div>
-                    <label for="pickup-location" class="block text-gray-700 text-sm font-bold mb-2">Pickup Location:</label>
-                    <input type="text" id="pickup-location" name="pickup-location" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required placeholder="Enter city or address">
+        <section id="book-now-form" class="rounded-lg shadow-md p-6 mb-6  w-full sm:w-99 " style="background-color: #555050ad;">
+            <h2 class="text-xl font-semibold mb-4 text-center text-white">Book Your Ride Now!</h2>
+            <form id="car-search-form" class="space-y-4">
+                <div class="form-box">
+                    <label for="pickup-location" class="block text-gray-100 text-sm font-bold mb-2">Pickup Location:</label>
+                    <input type="text" id="pickup-location" name="pickup-location" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required placeholder="Airport, city or station">
                 </div>
-                <div>
-                    <label for="dropoff-location" class="block text-gray-700 text-sm font-bold mb-2">Drop-off Location:</label>
-                    <input type="text" id="dropoff-location" name="dropoff-location" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter city or address (optional)">
+                <div class="flex items-center mb-4 form-box">
+                    <input id="different-dropoff" type="checkbox" class="mr-2">
+                    <label for="different-dropoff" class="text-gray-100">Drop car off at different location</label>
                 </div>
-                <div>
-                    <label for="pickup-date" class="block text-gray-700 text-sm font-bold mb-2">Pickup Date:</label>
-                    <input type="date" id="pickup-date" name="pickup-date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <div id="dropoff-location-container" class="hidden form-box">
+                    <label for="dropoff-location" class="block text-gray-100 text-sm font-bold mb-2">Drop-off Location:</label>
+                    <input type="text" id="dropoff-location" name="dropoff-location" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter city or address">
                 </div>
-                <div>
-                    <label for="pickup-time" class="block text-gray-700 text-sm font-bold mb-2">Pickup Time:</label>
-                    <input type="time" id="pickup-time" name="pickup-time" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <div class="flex space-x-4">
+                    <div class="flex-1 form-box">
+                        <label for="pickup-date" class="block text-gray-100 text-sm font-bold mb-2">Pickup Date:</label>
+                        <input type="date" id="pickup-date" name="pickup-date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="flex-1 form-box">
+                        <label for="pickup-time" class="block text-gray-100 text-sm font-bold mb-2">Pickup Time:</label>
+                        <input type="time" id="pickup-time" name="pickup-time" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
                 </div>
-                <div>
-                    <label for="dropoff-date" class="block text-gray-700 text-sm font-bold mb-2">Drop-off Date:</label>
-                    <input type="date" id="dropoff-date" name="dropoff-date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <div class="flex space-x-4">
+                    <div class="flex-1 form-box">
+                        <label for="dropoff-date" class="block text-gray-100 text-sm font-bold mb-2">Drop-off Date:</label>
+                        <input type="date" id="dropoff-date" name="dropoff-date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div class="flex-1 form-box">
+                        <label for="dropoff-time" class="block text-gray-100 text-sm font-bold mb-2">Drop-off Time:</label>
+                        <input type="time" id="dropoff-time" name="dropoff-time" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
                 </div>
-                <div>
-                    <label for="dropoff-time" class="block text-gray-700 text-sm font-bold mb-2">Drop-off Time:</label>
-                    <input type="time" id="dropoff-time" name="dropoff-time" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <div class="flex items-center mb-4 form-box">
+                    <input id="driver-age-checkbox" type="checkbox" class="mr-2">
+                    <label for="driver-age-checkbox" class="text-gray-100">Driver aged between 18 - 65?</label>
                 </div>
-                <div>
-                    <label for="vehicle-type" class="block text-gray-700 text-sm font-bold mb-2">Vehicle Type:</label>
-                    <select id="vehicle-type" name="vehicle-type" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                        <option value="">-- Select Vehicle Type --</option>
-                        <option value="economy">Economy</option>
-                        <option value="compact">Compact</option>
-                        <option value="suv">SUV</option>
-                        <option value="luxury">Luxury</option>
-                        <option value="van">Van</option>
-                    </select>
-                </div>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">Search Vehicles</button>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full form-box">Search Vehicles</button>
             </form>
         </section>
     </main>
@@ -353,124 +122,50 @@
             const yearSpan = document.getElementById('current-year');
             const currentYear = new Date().getFullYear();
             yearSpan.textContent = currentYear;
-        });
 
-        const bookingForm = document.getElementById('booking-form');
+            const differentDropoffCheckbox = document.getElementById('different-dropoff');
+            const dropoffLocationContainer = document.getElementById('dropoff-location-container');
 
-        bookingForm.addEventListener('submit', (event) => {
-            event.preventDefault(); 
-            const pickupLocation = document.getElementById('pickup-location').value;
-            const dropoffLocation = document.getElementById('dropoff-location').value;
-            const pickupDate = document.getElementById('pickup-date').value;
-            const pickupTime = document.getElementById('pickup-time').value;
-            const dropoffDate = document.getElementById('dropoff-date').value;
-            const dropoffTime = document.getElementById('dropoff-time').value;
-            const vehicleType = document.getElementById('vehicle-type').value;
-
-            console.log('Booking Details:', {
-                pickupLocation,
-                dropoffLocation,
-                pickupDate,
-                pickupTime,
-                dropoffDate,
-                dropoffTime,
-                vehicleType
-            });
-
-           
-            alert('Booking details submitted! (This is a front-end simulation on booking.html)');
-            
-        });
-
-       
-        const navLinks = document.querySelectorAll('header nav ul li a');
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === '#home') {
-                link.setAttribute('href', 'index.html#home');
-            } else if (link.getAttribute('href') === '#vehicles') {
-                link.setAttribute('href', 'index.html#vehicles');
-            } else if (link.getAttribute('href') === '#contact') {
-                link.setAttribute('href', 'index.html#contact');
-            } else if (link.getAttribute('href') === '#login') {
-                const loginRegisterLi = document.getElementById('nav-login-register');
-                if (loginRegisterLi) {
-                    link.setAttribute('href', 'index.html#login');
-                    loginRegisterLi.classList.remove('hidden');
+            differentDropoffCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    dropoffLocationContainer.classList.remove('hidden');
+                } else {
+                    dropoffLocationContainer.classList.add('hidden');
                 }
-            }
+            });
+
+            const carSearchForm = document.getElementById('car-search-form');
+
+            carSearchForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const pickupLocation = document.getElementById('pickup-location').value;
+                const dropoffLocation = document.getElementById('dropoff-location').value;
+                const pickupDate = document.getElementById('pickup-date').value;
+                const pickupTime = document.getElementById('pickup-time').value;
+                const dropoffDate = document.getElementById('dropoff-date').value;
+                const dropoffTime = document.getElementById('dropoff-time').value;
+                const driverAgeCheckbox = document.getElementById('driver-age-checkbox').checked;
+
+                const bookingDetails = {
+                    pickupLocation,
+                    dropoffLocation,
+                    pickupDate,
+                    pickupTime,
+                    dropoffDate,
+                    dropoffTime,
+                    driverAgeCheckbox
+                };
+
+                localStorage.setItem('bookingDetails', JSON.stringify(bookingDetails));
+                window.location.href = 'booking.html';
+            });
         });
 
-        const mobileNavLinks = document.querySelectorAll('#mobile-menu nav ul li a');
-        mobileNavLinks.forEach(link => {
-            if (link.getAttribute('href') === '#home') {
-                link.setAttribute('href', 'index.html#home');
-            } else if (link.getAttribute('href') === '#vehicles') {
-                link.setAttribute('href', 'index.html#vehicles');
-            } else if (link.getAttribute('href') === '#contact') {
-                link.setAttribute('href', 'index.html#contact');
-            } else if (link.getAttribute('href') === '#login') {
-                const mobileLoginRegisterLi = document.getElementById('mobile-nav-login-register');
-                if (mobileLoginRegisterLi) {
-                    link.setAttribute('href', 'index.html#login');
-                    mobileLoginRegisterLi.classList.remove('hidden'); 
-                }
-            }
-        });
-
-        
-        const navLogoutLink = document.getElementById('nav-logout');
-        if (navLogoutLink) {
-            navLogoutLink.addEventListener('click', () => {
-                localStorage.removeItem('username');
-                window.location.href = 'index.html'; 
-            });
+        function logout() {
+            // Perform any logout actions here, such as clearing session data
+            localStorage.removeItem('bookingDetails'); // Example: Clear booking details
+            window.location.href = 'index.html'; // Redirect to index.html
         }
-        const mobileNavLogoutLink = document.getElementById('mobile-nav-logout');
-        if (mobileNavLogoutLink) {
-            mobileNavLogoutLink.addEventListener('click', () => {
-                localStorage.removeItem('username');
-                window.location.href = 'index.html'; 
-            });
-        }
-
-       
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMenuBtn = document.getElementById('close-menu-btn');
-
-        function showMobileMenu() {
-            mobileMenu.classList.remove('hidden');
-        }
-
-        function hideMobileMenu() {
-            mobileMenu.classList.add('hidden');
-        }
-
-        hamburgerBtn.addEventListener('click', showMobileMenu);
-        closeMenuBtn.addEventListener('click', hideMobileMenu);
-
-        
-        function checkLoginStatus() {
-            const username = localStorage.getItem('username');
-            const navLoginRegisterLink = document.getElementById('nav-login-register');
-            const navLogoutLink = document.getElementById('nav-logout');
-            const mobileNavLoginRegisterLink = document.getElementById('mobile-nav-login-register');
-            const mobileNavLogoutLink = document.getElementById('mobile-nav-logout');
-
-            if (username) {
-                if (navLoginRegisterLink) navLoginRegisterLink.classList.add('hidden');
-                if (navLogoutLink) navLogoutLink.classList.remove('hidden');
-                if (mobileNavLoginRegisterLink) mobileNavLoginRegisterLink.classList.add('hidden');
-                if (mobileNavLogoutLink) mobileNavLogoutLink.classList.remove('hidden');
-            } else {
-                if (navLoginRegisterLink) navLoginRegisterLink.classList.remove('hidden');
-                if (navLogoutLink) navLogoutLink.classList.add('hidden');
-                if (mobileNavLoginRegisterLink) mobileNavLoginRegisterLink.classList.remove('hidden');
-                if (mobileNavLogoutLink) mobileNavLogoutLink.classList.add('hidden');
-            }
-        }
-
-        checkLoginStatus(); 
     </script>
 </body>
 </html>
