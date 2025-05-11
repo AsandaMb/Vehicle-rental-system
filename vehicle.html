@@ -7,7 +7,116 @@
 </html>
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Showroom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+    <style>
+        /* Custom CSS for header to ensure it stands out */
+        .header {
+            background: linear-gradient(to right, #6b7280, #374151); /* Gradient background */
+        }
+        .header h1 {
+            font-family: 'Inter', sans-serif;
+        }
+        .header p {
+            font-family: 'Inter', sans-serif;
+        }
+        .vehicle-card {
+            font-family: 'Inter', sans-serif;
+        }
+        .vehicle-card h3{
+             font-family: 'Inter', sans-serif;
+        }
+        .vehicle-card p{
+             font-family: 'Inter', sans-serif;
+        }
 
+        .view-details-button {
+            font-family: 'Inter', sans-serif;
+        }
+
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="header text-white py-6 px-4 rounded-b-lg shadow-md sticky top-0 z-10">
+        <h1 class="text-3xl font-semibold text-center">Explore Our Premium Vehicle Selection</h1>
+        <p class="text-lg text-gray-300 text-center mt-2">Discover your dream car with us.</p>
+    </header>
+
+    <main class="container mx-auto py-8">
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="vehicle-card bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105">
+                <img src="https://via.placeholder.com/400x200?text=Luxury+Sedan" alt="Luxury Sedan" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Luxury Sedan</h3>
+                    <p class="text-gray-600 mb-4">Year: 2023 | Mileage: 15,000 km</p>
+                    <p class="text-2xl font-bold text-blue-600 mb-4">$45,000</p>
+                    <a href="#" class="view-details-button bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200 block text-center">View Details</a>
+                </div>
+            </div>
+
+            <div class="vehicle-card bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105">
+                <img src="https://via.placeholder.com/400x200?text=Spacious+SUV" alt="Spacious SUV" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Spacious SUV</h3>
+                    <p class="text-gray-600 mb-4">Year: 2024 | Mileage: 10,000 km</p>
+                    <p class="text-2xl font-bold text-blue-600 mb-4">$52,000</p>
+                    <a href="#" class="view-details-button bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200 block text-center">View Details</a>
+                </div>
+            </div>
+
+            <div class="vehicle-card bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105">
+                <img src="https://via.placeholder.com/400x200?text=Powerful+Truck" alt="Powerful Truck" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Powerful Truck</h3>
+                    <p class="text-gray-600 mb-4">Year: 2022 | Mileage: 25,000 km</p>
+                    <p class="text-2xl font-bold text-blue-600 mb-4">$48,000</p>
+                    <a href="#" class="view-details-button bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200 block text-center">View Details</a>
+                </div>
+            </div>
+
+            <div class="vehicle-card bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105">
+                <img src="https://via.placeholder.com/400x200?text=Electric+Car" alt="Electric Car" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Electric Car</h3>
+                    <p class="text-gray-600 mb-4">Year: 2024 | Mileage: 5,000 km</p>
+                    <p class="text-2xl font-bold text-blue-600 mb-4">$60,000</p>
+                    <a href="#" class="view-details-button bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200 block text-center">View Details</a>
+                </div>
+            </div>
+
+            <div class="vehicle-card bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105">
+                <img src="https://via.placeholder.com/400x200?text=Sports+Car" alt="Sports Car" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Sports Car</h3>
+                    <p class="text-gray-600 mb-4">Year: 2023 | Mileage: 8,000 km</p>
+                    <p class="text-2xl font-bold text-blue-600 mb-4">$75,000</p>
+                    <a href="#" class="view-details-button bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200 block text-center">View Details</a>
+                </div>
+            </div>
+
+            <div class="vehicle-card bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105">
+                <img src="https://via.placeholder.com/400x200?text=Family+Van" alt="Family Van" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Family Van</h3>
+                    <p class="text-gray-600 mb-4">Year: 2022 | Mileage: 30,000 km</p>
+                    <p class="text-2xl font-bold text-blue-600 mb-4">$40,000</p>
+                    <a href="#" class="view-details-button bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200 block text-center">View Details</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4 text-center rounded-t-lg shadow-md">
+        <p>© 2024 Vehicle Showroom. All rights reserved.</p>
+    </footer>
+</body>
+</html>
 
 
 
