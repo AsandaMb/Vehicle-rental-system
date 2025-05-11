@@ -33,9 +33,12 @@ Palesa
 Siya
 
 
-Frontend(palesalephoi and Asanda)
-html file containing first webpage 
-user can login using username and password 
+Frontend(Palesa and Asanda)
+All html files are frontend
+please download the images when running the files if they dont show up when running
+Index
+booking 
+vehicle
 
 
 frontend/
