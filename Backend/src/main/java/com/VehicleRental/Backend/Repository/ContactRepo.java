@@ -1,4 +1,4 @@
 package com.VehicleRental.Backend.Repository;
 
-public class ContactRepo {
+public interface ContactRepo {
 }

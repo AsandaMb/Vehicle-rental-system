@@ -1,9 +1,6 @@
 package com.VehicleRental.Backend.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,5 +20,14 @@ public class RentalInfo {
     private LocalDateTime pickUp;
     private  LocalDateTime dropOff;
     private int rentalPeriod;
+    @ManyToOne
+    @JoinColumn(name = "employeeId", nullable = false)
+    private Employee employee;
+    @ManyToOne
+    @JoinColumn(name = "vehicleId", nullable = false)
+    private Vehicle vehicle;
+    @ManyToOne
+    @JoinColumn(name = "customerId", nullable = false)
+    private Customer customer;
 
 }
