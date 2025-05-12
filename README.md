@@ -33,6 +33,33 @@ Palesa
 Siya
 
 
-Frontend(palesalephoi and Asanda)
-html file containing first webpage 
-user can login using username and password 
+Frontend(Palesa and Asanda)
+All html files are frontend
+please download the images when running the files if they dont show up when running
+Index
+booking 
+vehicle
+
+
+frontend/
+├── public/
+│   ├── index.html
+│   ├── sunset-beach-drive-stockcake.jpg
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── MobileMenu.jsx
+│   │   ├── LoginForm.jsx
+│   │   ├── RegisterForm.jsx
+│   │   ├── HomePage.jsx
+│   │   └── Footer.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   └── Booking.jsx
+│   ├── App.js
+│   ├── index.js
+│   ├── App.css
+│   └── index.css
+├── package.json
+└── README.md
