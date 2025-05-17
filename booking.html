@@ -106,6 +106,7 @@
                     <input id="driver-age-checkbox" type="checkbox" class="mr-2">
                     <label for="driver-age-checkbox" class="text-gray-100">Driver aged between 18 - 65?</label>
                 </div>
+                <form id = "car-search-form">
                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full form-box">Search Vehicles</button>
             </form>
         </section>
@@ -166,6 +167,25 @@
             localStorage.removeItem('bookingDetails'); // Example: Clear booking details
             window.location.href = 'index.html'; // Redirect to index.html
         }
-    </script>
+    
+  document.addEventListener('DOMContentLoaded', function() {
+    const bookingForm = document.getElementById('car-search-form');
+
+    if (bookingForm) {
+      bookingForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Stop the default form submission
+
+        // Redirect to your showroom page (vehicle.html)
+        window.location.href = 'vehicle.html';
+      });
+    } else {
+      console.error('Booking form with ID "bookingForm" not found.');
+    }
+  });
+</script>
 </body>
 </html>
+
+
+                 
+   
