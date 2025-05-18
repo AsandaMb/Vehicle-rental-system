@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Showroom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"/>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: url('website.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        /* Custom CSS for header to ensure it stands out */
+        .header {
+            background: linear-gradient(to right, "bg-orange-500 text-white py-6"); /* Gradient background */
+        }
+        .header h1 {
+            font-family: 'Inter', sans-serif;
+        }
+        .header p {
+            font-family: 'Inter', sans-serif;
+        }
+        .vehicle-card {
+            font-family: 'Inter', sans-serif;
+        }
+        .vehicle-card h3{
+             font-family: 'Inter', sans-serif;
+        }
+        .vehicle-card p{
+             font-family: 'Inter', sans-serif;
+        }
+
+        .view-details-button {
+            font-family: 'Inter', sans-serif;
+        }
+
+    </style>
+</head>
+<body class="bg-black-100" >
+    <header class="header text-white py-6 px-4 rounded-b-lg shadow-md sticky top-0 z-10">
+        <h1 class="text-3xl font-semibold text-center">DriveNow Vehicle Selection</h1>
+        <header class="header text-white py-6 px-4 rounded-b-lg shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            
+            <button onclick="window.history.back()" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Go Back</button>
+        </div>
+        
+        <p class="text-lg text-gray-300 text-center mt-2"> Rent a car with us.</p>
+    </header>
+
+    <main class="container mx-auto py-8" style="background-image: url('website.jpg'); background-size: cover; background-repeat: no-repeat;">
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="vehicle-card bg-grey rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105">
+                <img src=" images.jpeg"alt="Economy Hatchback" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Economy:Hatchback</h3>
+                    <p class="text-black-800 mb-4">Year: 2023 | Mileage: 15,000 km</p>
+                    <p class="text-2xl font-bold text-orange-600 mb-4">R5,000</p>
+                    <a href="vehicle-details.html?vehicle=economy-hatchback"  class="view-details-button bg-orange-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200 block text-center">View Details</a>
+                </div>
+            </div>
+
+            <div class="vehicle-card bg-gray rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105">
+                <img src="imagess.jpeg " alt="Spacious SUV" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Spacious SUV</h3>
+                    <p class="text-black-800 mb-4">Year: 2024 | Mileage: 10,000 km</p>
+                    <p class="text-2xl font-bold text-orange-600 mb-4">R12,000</p>
+                    <a href="vehicle-details.html?vehicle=spacious-suv" class="view-details-button bg-orange-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200 block text-center">View Details</a>
+                </div>
+            </div>
+
+            <div class="vehicle-card bg-gray rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105">
+                <img src=" imagesss.jpeg " alt="Minibus" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Minibus</h3>
+                    <p class="text-black-800 mb-4">Year: 2022 | Mileage: 25,000 km</p>
+                    <p class="text-2xl font-bold text-orange-600 mb-4">R18,000</p>
+                    <a href="vehicle-details.html?vehicle=minibus"  class="view-details-button bg-orange-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200 block text-center">View Details</a>
+                </div>
+            </div>
+
+            <div class="vehicle-card bg-gray rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105">
+                <img src=" images3.jpeg " alt="Electric Car" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Electric Car</h3>
+                    <p class="text-black-800 mb-4">Year: 2024 | Mileage: 5,000 km</p>
+                    <p class="text-2xl font-bold text-orange-600 mb-4">R20,000</p>
+                    <a href="vehicle-details.html?vehicle=electric-car" class="view-details-button bg-orange-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200 block text-center">View Details</a>
+                </div>
+            </div>
+
+            <div class="vehicle-card bg-gray rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105">
+                <img src=" images4.jpeg " alt="Sports Car" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Sports Car</h3>
+                    <p class="text-black-800 mb-4">Year: 2023 | Mileage: 8,000 km</p>
+                    <p class="text-2xl font-bold text-orange-600 mb-4">R55,000</p>
+                    <a href="vehicle-details.html?vehicle=sports-car"  class="view-details-button bg-orange-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200 block text-center">View Details</a>
+                </div>
+            </div>
+
+            <div class="vehicle-card bg-gray rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105">
+                <img src=" images5.jpeg " alt="Family Van" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Family Van</h3>
+                    <p class="text-black-800 mb-4">Year: 2022 | Mileage: 30,000 km</p>
+                    <p class="text-2xl font-bold text-orange-600 mb-4">R30,000</p>
+                    <a href="vehicle-details.html?vehicle=family-van" class="view-details-button bg-orange-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200 block text-center">View Details</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="/*bg-gray-800*/ text-white py-4 text-center rounded-t-lg shadow-md">
+        <p>© 2025 DriveNow. All rights reserved.</p>
+    </footer>
+</body>
+</html>

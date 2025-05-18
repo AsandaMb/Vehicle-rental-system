@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/output.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: url('website.jpg'); 
+            background-size: cover; 
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            background-color: #f97316; /* Tailwind's gray-500 */
+            color: white;
+            padding: 1.5rem 1rem;
+            border-radius: 0 0 0.5rem 0.5rem;
+            box-shadow: 0 2px 4px rgba(228, 111, 9, 0.1);
+            text-align: center;
+        }
+        .header button {
+            background-color: #f97316; /* Tailwind's gray-500 */
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem; /* Tailwind's rounded-md */
+            cursor: pointer;
+            font-weight: 500; /* Tailwind's font-medium */
+            transition: background-color 0.2s ease-in-out;
+        }
+        .header button:hover {
+            background-color: #e96f12; /* Tailwind's gray-600 */
+        }
+        main {
+            flex-grow: 1;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.053);
+            border-radius: 0.5rem;
+            margin: 2rem auto;
+            max-width: 90%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color:rgba(255, 255, 255, 0.053) ;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        h2 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin-bottom: 1.25rem;
+            color: #0a0a0b; /* Tailwind's gray-800 */
+            border-bottom: 2px solid #e5e7eb; /* Tailwind's gray-200 */
+            padding-bottom: 0.5rem;
+        }
+        #booking-details p {
+            color: #4b5563; /* Tailwind's gray-600 */
+            margin-bottom: 0.75rem;
+        }
+        #payment-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #374151; /* Tailwind's gray-800 */
+            font-weight: 500; /* Tailwind's font-medium */
+        }
+        #payment-form input[type="text"],
+        #payment-form input[type="number"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db; /* Tailwind's gray-300 */
+            border-radius: 0.375rem; /* Tailwind's rounded-md */
+            margin-bottom: 1rem;
+        }
+        #payment-form button {
+            background-color: #10b981; /* Tailwind's green-500 */
+            color: white;
+            font-weight: 600; /* Tailwind's font-semibold */
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem; /* Tailwind's rounded-md */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        #payment-form button:hover {
+            background-color: #059669; /* Tailwind's green-600 */
+        }
+        #payment-summary {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #f9fafb; /* Tailwind's gray-50 */
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        #payment-summary h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #374151; /* Tailwind's gray-800 */
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #e5e7eb; /* Tailwind's gray-200 */
+            padding-bottom: 0.5rem;
+        }
+        #payment-summary p {
+            color: #4b5563; /* Tailwind's gray-600 */
+            margin-bottom: 0.5rem;
+        }
+        #payment-summary strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="header">
+        <h1>Payment Details</h1>
+        <button onclick="window.history.back()">Go Back</button>
+    </header>
+    <main class="container mx-auto py-8">
+        <section id="booking-details">
+            <h2>Booking Information</h2>
+            <p><strong id="vehicle-name"></strong></p>
+            <p>Total Amount: <strong id="total-amount"></strong></p>
+            <p id="addons-list"></p>
+            <p id="discount-applied"></p>
+        </section>
+
+        <section id="payment-form">
+            <h2>Payment Information</h2>
+            <label for="card-number">Card Number</label>
+            <input type="number" id="card-number" placeholder="Enter card number">
+
+            <label for="expiry-date">Expiry Date (MM/YY)</label>
+            <input type="text" id="expiry-date" placeholder="MM/YY">
+
+            <label for="cvv">CVV</label>
+            <input type="number" id="cvv" placeholder="CVV">
+
+            <button onclick="processPayment()">Pay Now</button>
+        </section>
+
+        <section id="payment-summary" style="display: none;">
+            <h3>Payment Successful!</h3>
+            <p>Thank you for your booking.</p>
+            <p>A confirmation email has been sent to your address.</p>
+            <button onclick="window.location.href = 'index.html'">Go to Homepage</button>
+        </section>
+    </main>
+    <script>
+        const bookingDataString = localStorage.getItem('bookingData');
+        if (bookingDataString) {
+            const bookingData = JSON.parse(bookingDataString);
+            document.getElementById('vehicle-name').textContent = `Vehicle: ${bookingData.vehicleName}`;
+            document.getElementById('total-amount').textContent = `R${bookingData.totalAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+            const addonsListElement = document.getElementById('addons-list');
+            if (bookingData.addons && bookingData.addons.length > 0) {
+                addonsListElement.textContent = `Add-ons: ${bookingData.addons.join(', ')}`;
+            } else {
+                addonsListElement.textContent = 'No add-ons selected.';
+            }
+
+            const discountAppliedElement = document.getElementById('discount-applied');
+            if (bookingData.discountCode) {
+                discountAppliedElement.textContent = `Discount Code Applied: ${bookingData.discountCode}`;
+            } else {
+                discountAppliedElement.textContent = 'No discount code applied.';
+            }
+        } else {
+            document.getElementById('booking-details').innerHTML = '<p class="text-red-500 font-bold">No booking data found. Please go back and select a vehicle.</p>';
+            document.getElementById('payment-form').style.display = 'none';
+        }
+
+        function processPayment() {
+            // In a real application, you would integrate with a payment gateway here.
+            // For this example, we'll just simulate a successful payment.
+            alert('Payment processed successfully!');
+            document.getElementById('payment-form').style.display = 'none';
+            document.getElementById('payment-summary').style.display = 'block';
+            localStorage.removeItem('bookingData'); // Clear booking data after "payment"
+        }
+    </script>
+</body>
+</html>
